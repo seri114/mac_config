@@ -204,32 +204,46 @@
       ]
     },
     {
-      "description": "vscode: ctl right to ctl international1",
+      "description": "all: cmd tab to ctl tab",
       "manipulators": [
         {
           "from": {
-            "key_code": "right_arrow",
+            "key_code": "tab",
+            "modifiers": {
+              "mandatory": [ "left_command" ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "tab",
+              "modifiers": [
+                "left_control"
+              ]
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    },
+    {
+      "description": "all: ctl tab to cmd tab",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "tab",
             "modifiers": {
               "mandatory": [ "left_control" ]
             }
           },
           "to": [
             {
-              "key_code": "international1",
+              "key_code": "tab",
               "modifiers": [
-                "left_control"
+                "left_command"
               ]
             }
           ],
-          "type": "basic",
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": [
-                "^com\\.microsoft\\.VSCode"
-              ]
-            }
-          ]
+          "type": "basic"
         }
       ]
     },
