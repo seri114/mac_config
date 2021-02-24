@@ -701,7 +701,66 @@
           ]
         }
       ]
-    },{
+    },
+    {
+      "description": "emacs: ctrl to cmd",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "left_control",
+            "modifiers": {
+              "optional": [
+                  "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_command"
+            }
+          ],
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^org\\.gnu\\.Emacs$"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "emacs: cmd to control",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "left_command",
+            "modifiers": {
+              "optional": [
+                  "any"
+              ]
+            }
+          },
+          "to": [
+            {
+              "key_code": "left_control"
+            }
+          ],
+          "type": "basic",
+          "conditions": [
+            {
+              "type": "frontmost_application_if",
+              "bundle_identifiers": [
+                "^org\\.gnu\\.Emacs$"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "description": "all: home command to command up",
       "manipulators": [
         {
@@ -791,7 +850,7 @@
             "key_code": "tab",
             "modifiers": {
               "mandatory": [ "command" ],
-              "optional" : [ "shift" ]
+              "optional" : [ "any" ]
             }
           },
           "to": [
@@ -814,7 +873,7 @@
             "key_code": "tab",
             "modifiers": {
               "mandatory": [ "control" ],
-              "optional" : [ "shift" ]
+              "optional" : [ "any" ]
             }
           },
           "to": [
